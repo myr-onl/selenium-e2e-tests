@@ -521,6 +521,129 @@
 			]
 		},
 		{
+            "id": "120-create-list",
+            "name": "120 Create list",
+            "commands": [
+            {
+                "id": "run-open",
+                "comment": "Open the site",
+                "command": "run",
+                "target": "010 Open",
+                "targets": [],
+                "value": ""
+            },
+            {
+                "id": "run-sign-in",
+                "comment": "Ensure user is signed in",
+                "command": "run",
+                "target": "020 Sign in",
+                "targets": [],
+                "value": ""
+            },
+            {
+                "id": "open-lists",
+                "command": "open",
+                "target": "/MyAccount/Lists",
+                "targets": [],
+                "value": ""
+            },
+			{
+              "id": "click-create-list",
+              "comment": "",
+              "command": "click",
+              "target": "css=button[onclick*='return AspenDiscovery.Account.showCreateListForm()']",
+              "targets": [],
+              "value": ""
+            }, {
+              "id": "select-list-title-field",
+              "comment": "",
+              "command": "click",
+              "target": "id=listTitle",
+              "targets": [],
+              "value": ""
+            }, {
+              "id": "type-list-title",
+              "comment": "",
+              "command": "type",
+              "target": "id=listTitle",
+              "targets": [],
+              "value": "Aspen Discovery Test List"
+            }, {
+              "id": "type-list-description",
+              "comment": "",
+              "command": "type",
+              "target": "id=listDesc",
+              "targets": [],
+              "value": "A test list for testing Aspen Discovery"
+            }, {
+              "id": "click-create-list-submit",
+              "comment": "",
+              "command": "click",
+              "target": "css=button[onclick*='AspenDiscovery.Account.addList(); return false;']",
+              "targets": [],
+              "value": ""
+            },
+            {
+            "id": "get-record",
+            "command": "open",
+            "target": "/GroupedWork/${holdBook.groupedWorkId}",
+            "targets": [],
+            "value": ""
+			},
+			{
+			  "id": "click-add-to-list-button",
+			  "comment": "",
+			  "command": "click",
+			  "target": "css=button.addToListBtn",
+			  "targets": [],
+			  "value": ""
+            },
+            {
+            "id": "assert-choose-a-list-contains-new-list",
+            "command": "assertText",
+            "target": "xpath=//select[@id='addToList-list']/option[contains(text(),'Aspen Discovery Test List')]",
+            "targets": [],
+            "value": "Aspen Discovery Test List"
+			},
+			{
+			  "id": "select-list",
+			  "comment": "",
+			  "command": "select",
+			  "target": "id=addToList-list",
+			  "targets": [],
+			  "value": "label=Aspen Discovery Test List"
+			},
+            {
+              "id": "focus-on-addToList-notes",
+              "comment": "",
+              "command": "click",
+              "target": "id=addToList-notes",
+              "targets": [],
+              "value": ""
+            }, {
+              "id": "type-addToList-notes",
+              "comment": "",
+              "command": "type",
+              "target": "id=addToList-notes",
+              "targets": [],
+              "value": "A test title for the test list"
+            }, {
+              "id": "click-save-to-list-button",
+              "comment": "",
+              "command": "click",
+              "target": "id=saveToListButton",
+              "targets": [],
+              "value": ""
+            }, {
+              "id": "click-close-modal-button",
+              "comment": "",
+              "command": "click",
+              "target": "id=modalCloseButton",
+              "targets": [],
+              "value": ""
+            }]
+        },
+		{
 			"id": "992-sign-out",
 			"name": "992 Sign out",
 			"commands": [
@@ -537,6 +660,7 @@
 					"comment": "Check if loginLink exists",
 					"command": "executeScript",
 					"target": "return document.querySelector('#loginLink') !== null;",
+					"targets": [],
 					"value": "isLoginLinkPresent"
 				},
 				{
@@ -544,6 +668,7 @@
 					"comment": "If loginLink does not exist",
 					"command": "if",
 					"target": "${isLoginLinkPresent} == false",
+					"targets": [],
 					"value": ""
 				},
 				{
@@ -644,6 +769,16 @@
 				"036-thaw-hold",
 				"037-change-pickup-location",
 				"038-cancel-hold"
+			]
+		},
+		{
+			"id": "aspen-lists-suite",
+			"name": "Aspen Discovery Lists Suite",
+			"persistSession": false,
+			"parallel": false,
+			"timeout": 600,
+			"tests": [
+				"120-create-list"
 			]
 		}
 	],
