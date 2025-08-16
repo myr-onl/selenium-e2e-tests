@@ -310,7 +310,7 @@
 					"target": "linkText=${holdBook.title}",
 					"targets": [],
 					"value": "${holdBook.title}"
-				}
+				},
 				{
 					"id": "catch-assert-hold-details",
 					"command": "catch",
@@ -338,7 +338,7 @@
 					"target": "linkText=${holdBook.title}",
 					"targets": [],
 					"value": "${holdBook.title}"
-				}
+				},
 				{
 					"id": "end-try-catch",
 					"command": "end",
