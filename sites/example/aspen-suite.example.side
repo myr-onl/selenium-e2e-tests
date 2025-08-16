@@ -298,6 +298,20 @@
 					"value": ""
 				},
 				{
+					"id": "click-refresh-holds",
+					"command": "click",
+					"target": "css=a[onclick*='return AspenDiscovery.Account.reloadHolds();']",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "wait-for-refresh-holds",
+					"command": "pause",
+					"target": "2000",
+					"targets": [],
+					"value": ""
+				},
+				{
 					"id": "assert-hold-details",
 					"command": "assertText",
 					"target": "linkText=AspenDiscovery testBook",
