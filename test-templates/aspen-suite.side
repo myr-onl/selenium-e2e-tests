@@ -298,11 +298,52 @@
 					"value": ""
 				},
 				{
+                    "id": "try-assert-hold-details",
+                    "command": "try",
+                    "target": "",
+                    "targets": [],
+                    "value": ""
+                },
+				{
 					"id": "assert-hold-details",
 					"command": "assertText",
 					"target": "linkText=${holdBook.title}",
 					"targets": [],
 					"value": "${holdBook.title}"
+				}
+				{
+					"id": "catch-assert-hold-details",
+					"command": "catch",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "click-refresh-holds",
+					"command": "click",
+					"target": "css=a[onclick*='return AspenDiscovery.Account.reloadHolds();']",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "wait-for-refresh-holds",
+					"command": "pause",
+					"target": "2000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "retry-assert-hold-details",
+					"command": "assertText",
+					"target": "linkText=${holdBook.title}",
+					"targets": [],
+					"value": "${holdBook.title}"
+				}
+				{
+					"id": "end-try-catch",
+					"command": "end",
+					"targets": [],
+					"value": ""
 				}
 			]
 		},
