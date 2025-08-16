@@ -271,6 +271,13 @@
 					"value": "5000"
 				},
 				{
+					"id": "autologout-uncheck",
+					"command": "executeScript",
+					"target": "document.getElementById('autologout').checked = false;",
+					"targets": [],
+					"value": ""
+				},
+				{
 					"id": "click-request-title",
 					"command": "click",
 					"target": "id=requestTitleButton",
@@ -458,9 +465,9 @@
 				{
 					"id": "verify-change-pickup-success",
 					"command": "verifyText",
-					"target": "css=.modal-body",
+					"target": "css=.modal-title",
 					"targets": [],
-					"value": "The hold has been updated"
+					"value": "Success"
 				}
 			]
 		},

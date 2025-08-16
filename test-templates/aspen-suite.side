@@ -465,9 +465,9 @@
 				{
 					"id": "verify-change-pickup-success",
 					"command": "verifyText",
-					"target": "css=.modal-body",
+					"target": "css=.modal-title",
 					"targets": [],
-					"value": "The hold has been updated"
+					"value": "Success"
 				}
 			]
 		},
