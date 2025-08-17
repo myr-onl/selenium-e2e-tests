@@ -564,26 +564,10 @@
 					"value": ""
 				},
 				{
-					"id": "select-exists-list",
-					"comment": "Select the existing list checkbox",
-					"command": "click",
-					"target": "id=selected${listId}",
-					"targets": [],
-					"value": ""
-				},
-				{
-					"id": "pre-game-confirm-popup",
-					"comment": "Confirm the Delete List popup ... before the Delete Selected List button is clicked",
-					"command": "chooseOkOnNextConfirmation",
-					"target": "",
-					"targets": [],
-					"value": ""
-				},
-				{
-					"id": "click-delete-selected-list",
-					"comment": "Click the delete list button",
-					"command": "click",
-					"target": "css=button[onclick*='AspenDiscovery.Account.deleteSelectedLists()']",
+					"id": "run-190-delete-list-from-your-lists-selected",
+					"comment": "Run the delete list test to remove the existing list",
+					"command": "run",
+					"target": "190 Delete list from Your Lists, selected",
 					"targets": [],
 					"value": ""
 				},
@@ -689,6 +673,65 @@
               "value": ""
             }]
         },
+		{
+			"id": "190-delete-list-from-your-lists-selected",
+			"name": "190 Delete list from Your Lists, selected",
+			"commands": [
+				{
+					"id": "open-lists",
+					"command": "open",
+					"target": "/MyAccount/Lists",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "check-list-exists",
+					"comment": "Check if the list exists and get its ID",
+					"command": "executeScript",
+					"target": "const links = document.querySelectorAll('a.result-title.notranslate[href*=\"/MyAccount/MyList/\"]'); for (let i = 0; i < links.length; i++) { if (links[i].textContent.includes(\"Aspen Discovery Test List\")) { const href = links[i].getAttribute('href'); const match = href.match(/\\/MyAccount\\/MyList\\/(\\d+)/); return match ? match[1] : null; } } return null;",
+					"targets": [],
+					"value": "listId"
+				},
+				{
+					"id": "if-list-exists-true",
+					"comment": "If the test list exists",
+					"command": "if",
+					"target": "${listId} != null",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "select-exists-list",
+					"comment": "Select the existing list checkbox",
+					"command": "click",
+					"target": "id=selected${listId}",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "pre-game-confirm-popup",
+					"comment": "Confirm the Delete List popup ... before the Delete Selected List button is clicked",
+					"command": "chooseOkOnNextConfirmation",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "click-delete-selected-list",
+					"comment": "Click the delete list button",
+					"command": "click",
+					"target": "css=button[onclick*='AspenDiscovery.Account.deleteSelectedLists()']",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "end-if-list-exists-true",
+					"command": "end",
+					"targets": [],
+					"value": ""
+				}
+			]
+		},
 		{
 			"id": "992-sign-out",
 			"name": "992 Sign out",
@@ -824,7 +867,8 @@
 			"parallel": false,
 			"timeout": 600,
 			"tests": [
-				"120-create-list"
+				"120-create-list",
+				"190-delete-list-from-your-lists-selected"
 			]
 		}
 	],
