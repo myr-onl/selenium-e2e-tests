@@ -1,7 +1,6 @@
 # Ignore custom test configs
 sites/**
-!sites/example/
-!sites/example/**
+!sites/example/conf/**
 
 # Ignore macOS, Windows, and Linux files
 .DS_Store
