@@ -339,6 +339,14 @@
 					"value": ""
 				},
 				{
+					"id": "waitFor-freeze-target",
+					"comment": "",
+					"command": "waitForElementPresent",
+					"target": "css=div:has(a[href^=\"/Record/${holdBook.bibRecordId}?\"])",
+					"targets": [],
+					"value": "10000"
+				},
+				{
 					"id": "assert-freeze-btn",
 					"command": "assertElementPresent",
 					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.freezeButton",
@@ -401,6 +409,14 @@
 					"value": ""
 				},
 				{
+					"id": "waitFor-thaw-target",
+					"comment": "",
+					"command": "waitForElementPresent",
+					"target": "css=div:has(a[href^=\"/Record/${holdBook.bibRecordId}?\"])",
+					"targets": [],
+					"value": "10000"
+				},
+				{
 					"id": "assert-thaw-btn",
 					"command": "assertElementPresent",
 					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.thawButton",
@@ -435,11 +451,11 @@
 					"value": ""
 				},
 				{
-					"id": "assert-change-pickup-btn",
-					"command": "assertElementPresent",
+					"id": "waitFor-change-pickup-btn",
+					"command": "waitForElementPresent",
 					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.changePickupLocationButton",
 					"targets": [],
-					"value": ""
+					"value": "10000"
 				},
 				{
 					"id": "click-change-pickup",
@@ -498,11 +514,11 @@
 					"value": ""
 				},
 				{
-					"id": "assert-cancel-btn",
-					"command": "assertElementPresent",
+					"id": "waitFor-cancel-btn",
+					"command": "waitForElementPresent",
 					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.cancelButton",
 					"targets": [],
-					"value": ""
+					"value": "10000"
 				},
 				{
 					"id": "click-cancel-hold",

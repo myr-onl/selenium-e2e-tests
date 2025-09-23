@@ -339,6 +339,14 @@
 					"value": ""
 				},
 				{
+					"id": "waitFor-freeze-target",
+					"comment": "",
+					"command": "waitForElementPresent",
+					"target": "css=div:has(a[href^=\"/Record/CARL0000968955?\"])",
+					"targets": [],
+					"value": "10000"
+				},
+				{
 					"id": "assert-freeze-btn",
 					"command": "assertElementPresent",
 					"target": "css=div:has(a[href*=\"/Record/CARL0000968955?\"]) ~ div button.freezeButton",
@@ -401,8 +409,16 @@
 					"value": ""
 				},
 				{
+					"id": "waitFor-thaw-target",
+					"comment": "",
+					"command": "waitForElementPresent",
+					"target": "css=div:has(a[href^=\"/Record/CARL0000968955?\"])",
+					"targets": [],
+					"value": "10000"
+				},
+				{
 					"id": "assert-thaw-btn",
-					"command": "assertText",
+					"command": "assertElementPresent",
 					"target": "css=div:has(a[href*=\"/Record/CARL0000968955?\"]) ~ div button.thawButton",
 					"targets": [],
 					"value": ""
@@ -433,6 +449,13 @@
 					"target": "/MyAccount/Holds?source=all",
 					"targets": [],
 					"value": ""
+				},
+				{
+					"id": "waitFor-change-pickup-btn",
+					"command": "waitForElementPresent",
+					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.changePickupLocationButton",
+					"targets": [],
+					"value": "10000"
 				},
 				{
 					"id": "click-change-pickup",
@@ -489,6 +512,13 @@
 					"target": "/MyAccount/Holds?source=all",
 					"targets": [],
 					"value": ""
+				},
+				{
+					"id": "waitFor-cancel-btn",
+					"command": "waitForElementPresent",
+					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.cancelButton",
+					"targets": [],
+					"value": "10000"
 				},
 				{
 					"id": "click-cancel-hold",
