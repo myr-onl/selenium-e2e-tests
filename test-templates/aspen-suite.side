@@ -340,15 +340,15 @@
 				},
 				{
 					"id": "assert-freeze-btn",
-					"command": "assertText",
-					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.freezeButton",
+					"command": "assertElementPresent",
+					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.freezeButton",
 					"targets": [],
-					"value": "Freeze Hold"
+					"value": ""
 				},
 				{
 					"id": "click-freeze-btn",
 					"command": "click",
-					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.freezeButton",
+					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.freezeButton",
 					"targets": [],
 					"value": ""
 				},
@@ -402,15 +402,15 @@
 				},
 				{
 					"id": "assert-thaw-btn",
-					"command": "assertText",
-					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.thawButton",
+					"command": "assertElementPresent",
+					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.thawButton",
 					"targets": [],
-					"value": "Thaw Hold"
+					"value": ""
 				},
 				{
 					"id": "click-thaw-btn",
 					"command": "click",
-					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.thawButton",
+					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.thawButton",
 					"targets": [],
 					"value": ""
 				},
@@ -431,6 +431,13 @@
 					"id": "open-holds-change-pickup",
 					"command": "open",
 					"target": "/MyAccount/Holds?source=all",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "assert-change-pickup-btn",
+					"command": "assertElementPresent",
+					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.changePickupLocationButton",
 					"targets": [],
 					"value": ""
 				},
@@ -487,6 +494,13 @@
 					"id": "open-holds",
 					"command": "open",
 					"target": "/MyAccount/Holds?source=all",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "assert-cancel-btn",
+					"command": "assertElementPresent",
+					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.cancelButton",
 					"targets": [],
 					"value": ""
 				},

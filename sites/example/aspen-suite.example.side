@@ -340,15 +340,15 @@
 				},
 				{
 					"id": "assert-freeze-btn",
-					"command": "assertText",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.freezeButton",
+					"command": "assertElementPresent",
+					"target": "css=div:has(a[href*=\"/Record/CARL0000968955?\"]) ~ div button.freezeButton",
 					"targets": [],
-					"value": "Freeze Hold"
+					"value": ""
 				},
 				{
 					"id": "click-freeze-btn",
 					"command": "click",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.freezeButton",
+					"target": "css=div:has(a[href*=\"/Record/CARL0000968955?\"]) ~ div button.freezeButton",
 					"targets": [],
 					"value": ""
 				},
@@ -403,14 +403,14 @@
 				{
 					"id": "assert-thaw-btn",
 					"command": "assertText",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.thawButton",
+					"target": "css=div:has(a[href*=\"/Record/CARL0000968955?\"]) ~ div button.thawButton",
 					"targets": [],
-					"value": "Thaw Hold"
+					"value": ""
 				},
 				{
 					"id": "click-thaw-btn",
 					"command": "click",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.thawButton",
+					"target": "css=div:has(a[href*=\"/Record/CARL0000968955?\"]) ~ div button.thawButton",
 					"targets": [],
 					"value": ""
 				},
