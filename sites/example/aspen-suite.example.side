@@ -439,14 +439,14 @@
 				{
 					"id": "waitFor-change-pickup-btn",
 					"command": "waitForElementPresent",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.changePickupLocationButton",
+					"target": "css=div:has(a[href^=\"/Record/CARL0000968955?\"]) ~ div button.changePickupLocationButton",
 					"targets": [],
 					"value": "5000"
 				},
 				{
 					"id": "click-change-pickup",
 					"command": "click",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.changePickupLocationButton",
+					"target": "css=div:has(a[href^=\"/Record/CARL0000968955?\"]) ~ div button.changePickupLocationButton",
 					"targets": [],
 					"value": ""
 				},
@@ -503,14 +503,14 @@
 					"id": "waitFor-cancel-btn",
 					"comment": "Wait for cancel button to be present",
 					"command": "waitForElementPresent",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.cancelButton",
+					"target": "css=div:has(a[href^=\"/Record/CARL0000968955?\"]) ~ div button.cancelButton",
 					"targets": [],
 					"value": "5000"
 				},
 				{
 					"id": "click-cancel-hold",
 					"command": "click",
-					"target": "css=div[class*=\"ilsHold_CARL0000968955\"] button.cancelButton",
+					"target": "css=div:has(a[href^=\"/Record/CARL0000968955?\"]) ~ div button.cancelButton",
 					"targets": [],
 					"value": ""
 				},
