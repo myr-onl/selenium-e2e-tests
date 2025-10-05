@@ -344,7 +344,7 @@
 					"command": "waitForElementPresent",
 					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.freezeButton",
 					"targets": [],
-					"value": "10000"
+					"value": "5000"
 				},
 				{
 					"id": "click-freeze-btn",
@@ -407,7 +407,7 @@
 					"command": "waitForElementPresent",
 					"target": "css=div:has(a[href*=\"/Record/${holdBook.bibRecordId}?\"]) ~ div button.thawButton",
 					"targets": [],
-					"value": "10000"
+					"value": "5000"
 				},
 				{
 					"id": "click-thaw-btn",
@@ -441,7 +441,7 @@
 					"command": "waitForElementPresent",
 					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.changePickupLocationButton",
 					"targets": [],
-					"value": "10000"
+					"value": "5000"
 				},
 				{
 					"id": "click-change-pickup",
@@ -505,7 +505,7 @@
 					"command": "waitForElementPresent",
 					"target": "css=div[class*=\"ilsHold_${holdBook.bibRecordId}\"] button.cancelButton",
 					"targets": [],
-					"value": "10000"
+					"value": "5000"
 				},
 				{
 					"id": "click-cancel-hold",
@@ -515,16 +515,16 @@
 					"value": ""
 				},
 				{
-					"id": "assert-cancel-modal",
-					"command": "assertText",
-					"target": "css=.tool",
+					"id": "waitFor-confirm-cancel",
+					"command": "waitForElementPresent",
+					"target": "css=.confirmCancelButton",
 					"targets": [],
-					"value": "Confirm Cancel Hold"
+					"value": "5000"
 				},
 				{
 					"id": "confirm-cancel",
 					"command": "click",
-					"target": "css=.tool",
+					"target": "css=.confirmCancelButton",
 					"targets": [],
 					"value": ""
 				},
