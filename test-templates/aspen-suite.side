@@ -742,8 +742,32 @@
 					"value": ""
 				},
 				{
+					"id": "check-opt-out-soft-delete",
+					"comment": "Opt out of soft deletion",
+					"command": "check",
+					"target": "id=optOutSoftDeletionBulk",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "confirm-soft-delete-override",
+					"comment": "Click the confirmation button",
+					"command": "click",
+					"target": "id=confirmDeleteSelectedLists",
+					"targets": [],
+					"value": ""
+				},
+				{
 					"id": "end-if-list-exists-true",
 					"command": "end",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "check-list-does-not-exist",
+					"comment": "Verify the list is no longer present",
+					"command": "assertElementNotPresent",
+					"target": "css=a.result-title.notranslate[href*=\"/MyAccount/MyList/\"]:contains(\"Aspen Discovery Test List\")",
 					"targets": [],
 					"value": ""
 				}
