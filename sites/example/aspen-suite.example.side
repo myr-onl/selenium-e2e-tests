@@ -750,7 +750,7 @@
 					"value": ""
 				},
 				{
-					"id": "confirm-soft-deletion",
+					"id": "confirm-soft-delete-override",
 					"comment": "Click the confirmation button",
 					"command": "click",
 					"target": "id=confirmDeleteSelectedLists",
@@ -766,10 +766,10 @@
 				{
 					"id": "check-list-does-not-exist",
 					"comment": "Verify the list is no longer present",
-					"command": "assertElementNotPresent",
-					"target": "css=a.result-title.notranslate[href*=\"/MyAccount/MyList/\"]:contains(\"Aspen Discovery Test List\")",
+					"command": "waitForElementNotPresent",
+					"target": "xpath=//a[@class='result-title notranslate' and text()='Aspen Discovery Test List']",
 					"targets": [],
-					"value": ""
+					"value": "5000"
 				}
 			]
 		},
