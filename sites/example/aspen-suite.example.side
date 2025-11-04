@@ -750,7 +750,7 @@
 					"value": ""
 				},
 				{
-					"id": "confirm-soft-deletion",
+					"id": "confirm-soft-delete-override",
 					"comment": "Click the confirmation button",
 					"command": "click",
 					"target": "id=confirmDeleteSelectedLists",
