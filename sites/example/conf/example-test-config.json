@@ -12,5 +12,11 @@
 		"title": "AspenDiscovery testBook",
 		"groupedWorkId": "9e673c23-4099-caf3-37da-8016252e7dc9-eng",
 		"bibRecordId": "CARL0000968955"
+	},
+	"volumeHold": {
+		"description": "A grouped work with a bib record in your ILS that has volume data and can be placed on hold",
+		"title": "Volume hold test book",
+		"groupedWorkId": "3c819349-e364-be13-fe73-152119b0301b-eng",
+		"bibRecordId": "12345"
 	}
 }
