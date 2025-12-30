@@ -95,7 +95,8 @@ var processedSites = [];
 if (fs.existsSync(sitesDir)) {
 	var siteDirs = fs.readdirSync(sitesDir, {withFileTypes: true})
 		.filter(function (dirent) {
-			return dirent.isDirectory();
+			// Check if it's a directory AND it's not the 'example' folder
+			return dirent.isDirectory() && dirent.name !== 'example';
 		})
 		.map(function (dirent) {
 			return dirent.name;
