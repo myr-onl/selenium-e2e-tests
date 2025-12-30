@@ -14,8 +14,8 @@ This directory contains Selenium IDE tests for [Aspen Discovery](https://github.
 
 ## First-time Setup
 
-1. Make sure you have Node.js installed on your system. (Download from [nodejs.org](https://nodejs.org/en/download).
-    - If you're a testing librarian, you probably do NOT want the Docker version, so scroll down until you see "get a prebuilt Node.js® for..." and use that instead)
+1. Make sure you have Node.js installed on your system. (Download from [nodejs.org](https://nodejs.org/en/download)).
+    - If you're a testing librarian, you probably do NOT want the Docker version, so scroll down until you see "get a prebuilt Node.js® for..." and use that instead.
 2. Make sure you have a browser with the Selenium IDE extension installed. The two browsers that currently work with the Selenium IDE Add-on are Edge and Firefox. 
     - [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/selenium-ide/ajdpfmkffanmkhejnopjppegokpogffp)
     - [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/)
@@ -40,6 +40,10 @@ This directory contains Selenium IDE tests for [Aspen Discovery](https://github.
     - `title` - Title of the book to hold, **exactly** as it appears in Aspen Discovery
     - `groupedWorkId` - The ID of the grouped work in Aspen Discovery
     - `bibRecordId` - The ID of the bibliographic record in your ILS
+- `volumeHold` - A grouped work with a bibliographic record in your ILS that has volume data and can be placed on hold
+  - `title` - Title of the item to hold **exactly** as it appears in Aspen Discovery
+  - `groupedWorkId` - The ID of the grouped work in Aspen Discovery
+  - `bibRecordId` - The ID of the bibliographic record in your ILS
 
 ## Running the Tests
 
@@ -53,14 +57,21 @@ Simply double-click the `prepare-selenium-tests.bat` file in Windows File Explor
 
 #### Linux/macOS: Using the shell script
 
-Make the script executable and run it:
+Open this repo in your terminal, either from inside your IDE or by opening the terminal and running `cd /path/to/git/repo`.
+
+The script should be executable by default, so just run the script:
+
+```bash
+./prepare-selenium-tests.sh
+```
+If you get an error attempting to run it, make sure the script is executable and then run it:
 
 ```bash
 chmod +x prepare-selenium-tests.sh
 ./prepare-selenium-tests.sh
 ```
 
-#### Option 3: Using Node.js directly
+#### Alternative option: Using Node.js directly
 
 ```bash
 node prepare-selenium-tests.js
@@ -75,11 +86,11 @@ Any of these methods will:
 
 ### Step 2: Open the Processed File in Selenium IDE
 
-1. Install the Selenium IDE extension for Chrome.
-2. Open Selenium IDE in Chrome.
+1. Install the Selenium IDE extension in your web browser.
+2. Open Selenium IDE from your browser extension menu.
 3. Click "Open an existing project".
 4. Navigate to and select the processed file from your site directory:
-   `sites/[siteName]/AspenDiscovery.processed.side`.
+   `sites/[siteName]/aspen-suite.[siteName].side`.
 
 **Important:** Always open the processed file in your site directory, not the original file in the `test-templates` directory. The original file contains variables that need to be replaced before running the tests.
 
@@ -118,5 +129,5 @@ To add a new site:
    ```bash
    cp sites/example/conf/example-test-config.json sites/[site-name]/conf/[site-name]-test-config.json
    ```
-3. Edit the configuration file to set your site-specific values.
-4. Follow the steps in the "Running the Tests" section to prepare and run the tests for your new site.
+4. Edit the configuration file to set your site-specific values.
+5. Follow the steps in the "Running the Tests" section to prepare and run the tests for your new site.
